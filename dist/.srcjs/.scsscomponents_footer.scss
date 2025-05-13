@@ -1,0 +1,108 @@
+//       SUMMARY TABLE     
+// =========================
+// 1. Global
+// =========================
+
+
+// 1. Global
+// =========================
+
+.footer {
+	padding-top: 20rem;
+
+	.container {
+		padding-top: 7rem;
+		padding-bottom: 1.5rem;
+		position: relative;
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 1rem;
+			width: calc(100% - 2rem);
+			height: 1px;
+			background-color: #B9B9BA;
+			opacity: 0.2;
+		}
+	}
+
+	&__social {
+		display: flex;
+		height: 11rem;
+
+		@include breakpoint(991px) {
+			height: 16rem;
+		}
+
+		&__item {
+			&:first-child {
+				margin-right: 4rem;
+			}
+
+			&__link {
+				font-size: 1.5rem;
+			}
+		}
+	}
+
+	&__info {
+		height: 11rem;
+		padding-right: 1rem;
+
+		@include breakpoint(991px) {
+			height: 9rem;
+		}
+
+		a {
+			display: table;
+		}
+	}
+
+	&__links {
+		.btn:first-child {
+			margin-bottom: 1.2rem;
+		}
+	}
+
+	.registration {
+		margin-top: 20.2rem;
+		font-size: 1rem;
+		width: 26.2rem;
+
+		@include breakpoint(991px) {
+			display: none;
+		}
+	}
+
+	.registration-mobile {
+		font-size: 1rem;
+		display: none;
+
+		@include breakpoint(991px) {
+			display: block;
+			margin-top: 6rem;
+			width: 26.2rem;
+		}
+	}
+
+	.subtitle {
+		margin-top: 16rem;
+	}
+
+	&__copyright {
+		@include breakpoint(991px) {
+			display: none;
+		}
+
+		&__mobile {
+			display: none;
+
+			@include breakpoint(991px) {
+				display: block;
+				padding-top: 6rem;
+			}
+		}
+	}
+}

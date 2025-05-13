@@ -1,0 +1,448 @@
+//       SUMMARY TABLE     
+// =========================
+// 1. Global
+// =========================
+
+
+// 1. Global
+// =========================
+
+.header {
+	background-color: #FFFAFA;
+	position: fixed;
+	height: 5rem;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 3;
+	@include transform(translate3d(0, -100%, 0));
+	@include transition(transform .5s $custom, background-color 0.4s $smooth);
+
+	@include breakpoint(1400px) {
+		.col:nth-child(2) {
+			width: 25%;
+		}
+
+		.col:nth-child(3) {
+			width: 41.6666666667%;
+		}
+	}
+	@include breakpoint(1200px) {
+		.col:nth-child(2) {
+			width: 16.666%;
+		}
+
+		.col:nth-child(3) {
+			width: 50%;
+		}
+	}
+	@include breakpoint(991px) {
+		.col:nth-child(2) {
+			width: auto;
+		}
+		.col:nth-child(3) {
+			display: none;
+		}
+
+		.col:last-child {
+			margin-left: auto;
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	&.show {
+		@include transform(translate3d(0, 0, 0));
+		@include transition(transform 1s $custom, background-color 0.4s $smooth);
+	}
+
+	.container {
+		height: 100%;
+		position: relative;
+
+		&:after {
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 1rem;
+			width: calc(100% - 2rem);
+			height: 1px;
+			background-color: #B9B9BA;
+			opacity: 0.2;
+		}
+	}
+
+	.row {
+		align-items: center;
+		height: 100%;
+	}
+
+	&__logo {
+		font-family: 'PPMedium';
+		font-size: 1.5rem;
+		line-height: 1;
+
+		@include breakpoint(991px) {
+			margin-right: 2rem;
+		}
+	}
+
+	&__menu {
+		display: flex;
+		height: 5rem;
+
+		&__item {
+			margin-right: 4rem;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			&__link {
+				color: #000;
+				font-size: 1.5rem;
+				line-height: 1;
+				position: relative;
+				height: 100%;
+				display: flex;
+				align-items: center;
+
+				&:after {
+					content: '';
+					display: block;
+					position: absolute;
+					bottom: 0.5px;
+					left: 0;
+					width: 100%;
+					height: 1px;
+					background-color: #000;
+					transform-origin: right center;
+					@include transition(transform 0.4s $smooth);
+					will-change: transform;
+					@include transform(scaleX(0));
+				}
+
+				&:hover {
+					&:after {
+						transform-origin: left center;
+						@include transform(scaleX(1));
+					}
+				}
+			}
+		}
+
+		@include breakpoint(991px) {
+			display: none;
+		}
+	}
+
+	&__toggle {
+		display: flex;
+		height: 3rem;
+		width: 8rem;
+		justify-content: space-between;
+		border: 1px solid rgba(0, 0, 0, .1);
+		border-radius: 30px;
+		align-items: center;
+		background-color: transparent;
+		cursor: pointer;
+		padding: 0 1px;
+		position: relative;
+		@include transition(border-color 0.4s $smooth);
+
+		@media screen and (min-width: 992px) {
+			&:hover {
+				border-color: rgba(0, 0, 0, .4);
+			}
+		}
+
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 1px;
+			left: 1px;
+			background-color: #000;
+			border-radius: 30px;
+			width: 3.8rem;
+			height: 2.6rem;
+			@include transition(all 0.4s $smooth);
+		}
+
+		& > div {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 3.8rem;
+			position: relative;
+			z-index: 1;
+
+			svg {
+				display: block;
+
+				path {
+					@include transition(fill 0.4s $smooth);
+				}
+			}
+		}
+	}
+
+	&__sound {
+		cursor: pointer;
+		display: block;
+		margin-left: auto;
+		appearance: none;
+		padding: 0;
+		background-color: transparent;
+		border: none;
+		height: 3rem;
+		width: 3rem;
+		position: relative;
+
+		svg {
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			@include transition(all 0.4s $smooth);
+
+			circle {
+				@include transition(opacity 0.4s $smooth);
+			}
+
+			&.on {
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+
+		&.playing {
+			.on {
+				opacity: 1;
+				visibility: visible;
+			}
+
+			.off {
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+
+		&:hover {
+			svg {
+				circle {
+					opacity: 0.4;
+				}
+			}
+		}
+	}
+
+	&__burger {
+		appearance: none;
+		padding: 0;
+		background-color: transparent;
+		border: none;
+		color: #000;
+		font-size: 1.5rem;
+		line-height: 1;
+		margin-right: 2rem;
+		display: none;
+
+		@include breakpoint(991px) {
+			display: block;
+		}
+	}
+
+	@include breakpoint(991px) {
+		.row {
+			display: flex;
+		}
+	}
+}
+
+
+.menu-mobile {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: none;
+	height: 100%;
+	width: 100%;
+	z-index: 20;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	pointer-events: none;
+	padding: 0 1rem;
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background-color: $lightred;
+		transform-origin: bottom center;
+		@include transform(scaleY(0));
+		@include transition(transform 1s $custom .2s);
+	}
+
+	.menu-close {
+		position: absolute;
+		appearance: none;
+		padding: 0;
+		background: transparent;
+		border: none;
+		top: 1rem;
+		right: 1rem;
+		@include transition(all 0.5s $smooth);
+		opacity: 0;
+		visibility: hidden;
+		z-index: 1;
+	}
+
+	.nav {
+		position: relative;
+		z-index: 1;
+
+		&__item {
+			margin-bottom: 1.4rem;
+			@include transform(translate3d(0, 3rem, 0));
+			@include transition(opacity 0.5s $smooth, visibility 0.5s $smooth, transform 0.1s $smooth 0.5s);
+			opacity: 0;
+			visibility: hidden;
+
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&__link {
+				color: #000;
+				font-size: 3.4rem;
+				line-height: 3.6rem;
+			}
+		}
+	}
+
+	@include breakpoint(991px) {
+		display: flex;
+
+		&.show {
+			pointer-events: initial;
+
+			&:before {
+				@include transform(scaleY(1));
+				@include transition(all 1s $custom);
+			}
+
+			.nav__item {
+				opacity: 1;
+				visibility: visible;
+				@include transform(translate3d(0, 0, 0));
+
+				&:first-child {
+					@include transition(all 1s $smooth .5s);
+				}
+
+				&:nth-child(2) {
+					@include transition(all 1s $smooth .6s);
+				}
+
+				&:nth-child(3) {
+					@include transition(all 1s $smooth .7s);
+				}
+
+				&:nth-child(4) {
+					@include transition(all 1s $smooth .8s);
+				}
+			}
+
+			.menu-close {
+				opacity: 1;
+				visibility: visible;
+				@include transition(all .5s $smooth .5s);
+			}
+		}
+	}
+}
+
+.dark {
+	.header {
+		background-color: #000;
+
+		&__logo {
+			color: $lightred;
+		}
+
+		&__burger {
+			color: $lightred;
+		}
+
+		&__sound {
+			circle {
+				stroke: rgb(255, 250, 250);
+				opacity: 0.2;
+			}
+		}
+
+		&__menu {
+			&__item {
+				&__link {
+					color: $lightred;
+
+					&:after {
+						background-color: $lightred;
+					}
+				}
+			}
+		}
+
+		.container {
+			&:after {
+				background-color: rgba(185, 185, 186, .2);
+				opacity: 1;
+			}
+		}
+	}
+
+	.header__toggle {
+		border-color: rgba(255, 250, 250, .2);
+
+		&:before {
+			background-color: #fff;
+			@include transform(translateX(3.8rem));
+		}
+	}
+
+	.menu-close {
+		circle {
+			stroke: $lightred;
+		}
+
+		path {
+			stroke: $lightred;
+		}
+	}
+
+	.menu-mobile {
+		&:before {
+			background-color: #000;
+		}
+
+		.nav__item__link {
+			color: $lightred;
+		}
+	}
+}
+
+
+.is-spiced {
+	.header .container:after {
+		background-color: #000;
+		opacity: 0.1;
+	}
+}

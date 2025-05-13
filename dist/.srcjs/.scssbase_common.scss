@@ -1,0 +1,446 @@
+//       SUMMARY TABLE     
+// =========================
+// 1. Utils
+// =========================
+
+
+// 1. Utils
+// =========================
+
+
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+audio {
+	display: none;
+}
+
+.full {
+	display: block;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+.btn {
+	display: table;
+	align-items: center;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 30px;
+	position: relative;
+	-webkit-mask-image: -webkit-radial-gradient(white, black);
+	mask-image: radial-gradient(white, black);
+	@include transition(transform 1s $smooth);
+	padding: 1.4rem 5rem;
+
+	.arrow {
+		position: absolute;
+		margin-left: 0.5rem;
+		top: 0.2rem;
+	}
+
+	&.spice {
+		background-color: #FD2C2A;
+	}
+
+	&__text {
+		display: block;
+		line-height: 1;
+		text-transform: uppercase;
+		font-family: 'PPMedium';
+		position: relative;
+		z-index: 1;
+		letter-spacing: 0.03em;
+  	@include transition(color 0.3s $smooth);
+
+  	&:after {
+  		content: '';
+  		display: block;
+  		position: absolute;
+  		bottom: -1px;
+  		left: 0;
+  		height: 1px;
+  		width: 100%;
+  		background-color: #000;
+  		@include transition(background-color 0.3s $smooth);
+
+  		@include breakpoint(991px) {
+  			bottom: 0;
+  		}
+  	}
+	}
+
+	&.small {
+		padding: .9rem 3rem;
+
+		.btn__text {
+			font-size: 1.2rem;
+			letter-spacing: 0.03em;
+		}
+
+		&.privacy {
+			padding-right: 4rem;
+		}
+	}
+
+	&__anim {
+		position: absolute;
+    display: block;
+    content: "";
+    z-index: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    border-radius: 100%;
+    background: #000;
+    transform: translate(-50%, -50%);
+    @include transition(width 0.3s cubic-bezier(0.15, 0.9, 0.34, 0.95), padding-top 0.3s cubic-bezier(0.15, 0.9, 0.34, 0.95));
+	}
+
+	@media screen and (min-width: 992px) {
+		&:hover {
+			@include transform(scale(1.1));
+
+	  	.btn__anim {
+	  		width: 200%;
+	  		padding-top: 200%;
+	    	@include transition(width 0.8s cubic-bezier(0.15, 0.9, 0.34, 0.95), padding-top 0.8s cubic-bezier(0.15, 0.9, 0.34, 0.95));
+	  	}
+
+	  	.arrow {
+	  		path {
+	  			fill: #fff;
+	  		}
+	  	}
+
+	  	.btn__text {
+	  		color: #fff;
+	  		@include transition(color 0.3s $smooth .1s);
+
+	  		&:after {
+	  			background-color: #fff;
+	  			@include transition(background-color 0.3s $smooth .1s);
+	  		}
+	  	}
+		}
+	}
+}
+
+.dark .btn {
+	border-color: rgba(255, 250, 250, .2);
+
+	.btn__text {
+		&:after {
+			background-color: #fff;
+		}
+	}
+
+	.arrow path {
+		fill: #fff;
+	}
+
+	.btn__anim {
+		background-color: #fff;
+	}
+
+	@media screen and (min-width: 992px) {
+		&:hover {
+	  	.btn__text {
+	  		color: #000;
+
+	  		.arrow path {
+	  			fill: #000;
+	  		}
+
+	  		&:after {
+	  			background-color: #000;
+	  			@include transition(background-color 0.3s $smooth .1s);
+	  		}
+	  	}
+		}
+	}
+}
+
+
+.cursor {
+	height: 2rem;
+	width: 2rem;
+	position: fixed;
+	z-index: 500;
+	pointer-events: none;
+	top: -1rem;
+	left: -1rem;
+	will-change: transform;
+	@include transform(translate(-100px, -100px));
+	@include transition(transform 0.7s $smooth, opacity 0.3s $smooth);
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: -3.2rem;
+		height: 9.2rem;
+		width: 9.2rem;
+		will-change: transform;
+		@include transform(translate(0, -50%) scale(0));
+		background: url(../../img/pepper.png) no-repeat center;
+		background-size: contain;
+		z-index: 2;
+		@include transition(all 0.4s $smooth);
+	}
+
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		border-radius: 50%;
+		background-color: #FD2C2A;
+		@include transition(all 0.4s $smooth);
+	}
+
+	.spinner {
+		height: 7.4rem;
+		display: block;
+		width: 7.4rem;
+		background: url(../../img/spinner.png) no-repeat center;
+		background-size: contain;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 1;
+		opacity: 0;
+		visibility: hidden;
+		margin: -3.72rem 0 0 -3.72rem;
+		animation: rotating 2s linear infinite;
+		@include transition(all 0.4s $smooth);
+	}
+
+	span {
+		display: block;
+		position: absolute;
+		font-size: 1.2rem;
+		font-family: 'PPMedium';
+		line-height: 1;
+		color: #FD2C2A;
+		left: 2.8rem;
+		top: 0.5rem;
+		width: 11rem;
+		@include transition(all 0.2s $smooth);
+	}
+
+	.load {
+		position: absolute;
+		font-size: 1.2rem;
+		font-family: 'PPMedium';
+		line-height: 1;
+		color: #FD2C2A;
+		left: 2.8rem;
+		top: 0.5rem;
+		width: 11rem;
+		@include transition(all 0.2s $smooth);
+		opacity: 0;
+		visibility: hidden;
+	}
+
+	&.clicked {
+		span {
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+
+	&.loading {
+		.spinner {
+			opacity: 1;
+			visibility: visible;
+			@include transition(all 0.4s $smooth .2s);
+		}
+
+		&:not(.pepper) {
+			.load {
+				opacity: 1;
+				visibility: visible;
+			}
+
+			.spinner {
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+	}
+
+	&.pepper {
+		&:before {
+			@include transform(translate(0, -50%) scale(1));
+			@include transition(all 0.4s $smooth .2s);
+		}
+
+		span {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		&:after {
+			@include transform(scale(4));
+		}
+	}
+
+	&.loaded {
+		.spinner, .load {
+			opacity: 0!important;
+			visibility: hidden!important;
+			@include transition(all 0.4s $smooth);
+		}
+	}
+}
+
+
+
+.border-bottom {
+	position: relative;
+
+	&:after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 1rem;
+		width: calc(100% - 2rem);
+		height: 1px;
+		background-color: #B9B9BA;
+		opacity: 0.2;
+	}
+}
+
+.animate {
+	opacity: 0;
+
+	&.anim {
+		opacity: 1;
+		@include transition(all 1s $smooth .2s);
+	}
+}
+
+// .subtitle.animate {
+// 	line-height: 4.6rem;
+
+// 	&.anim {
+// 		line-height: 3.6rem;
+// 	}
+// }
+
+// .paragraph.animate {
+// 	line-height: 2.8rem;
+	
+// 	&.anim {
+// 		line-height: 1.8rem;
+// 	}
+// }
+
+.animate-btn {
+	opacity: 0;
+	visibility: hidden;
+
+	&.anim {
+		opacity: 1;
+		visibility: visible;
+		@include transition(all .7s $custom 0.4s);
+	}
+}
+
+
+
+.spice-anim {
+	position: fixed;
+	height: 5px;
+	width: 5px;
+	border-radius: 50%;
+	background-color: #FD2C2A;
+	@include transform(scale(0) translate(-50%, -50%));
+}
+
+.is-spiced {
+	.cursor:after {
+		background-color: $lightred;
+	}
+
+	.border-bottom {
+		&:after {
+			background-color: #000;
+			opacity: 0.1;
+		}
+	}
+
+	.home__contact .border-bottom:after {
+		display: none;
+	}
+
+	.footer .container:before {
+		background-color: #000;
+		opacity: 0.1;
+	}
+
+	.home__pepper {
+		display: none;
+	}
+
+	.peppermobile {
+		background-color: $lightred!important;
+	}
+
+	.header__toggle__light path {
+		fill: #FD2C2A;
+	}
+
+	.service__content__row {
+		border-bottom-color: rgba(0, 0, 0, 0.1);
+	}
+
+	.service__content__row:first-child {
+		border-top-color: rgba(0, 0, 0, 0.1);
+	}
+
+	.service__content__row:hover {
+		color: #FD2C2A;
+	}
+
+	.nice-select .nice-select-dropdown {
+		background-color: #FD2C2A;
+	}
+
+	.service {
+		&__less {
+
+			&:after {
+				background-image: url(../../img/icon-less-spice.svg);
+			}
+		}
+	}
+
+	.btn:hover {
+		.arrow path {
+			fill: #FD2C2A;
+		}
+
+		.btn__text {
+			color: #FD2C2A;
+
+			&:after {
+				background-color: #FD2C2A;
+			}
+		}
+	}
+}

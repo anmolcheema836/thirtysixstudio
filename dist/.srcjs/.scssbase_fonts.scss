@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'PP';
+    src: url('../fonts/PPNeueMontreal-Regular.woff2') format('woff2'),
+        url('../fonts/PPNeueMontreal-Regular.woff') format('woff');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'PPMedium';
+    src: url('../fonts/PPNeueMontreal-Medium.woff2') format('woff2'),
+        url('../fonts/PPNeueMontreal-Medium.woff') format('woff');
+    font-weight: 500;
+    font-display: swap;
+}

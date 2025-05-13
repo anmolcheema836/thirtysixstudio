@@ -1,0 +1,113 @@
+//       SUMMARY TABLE     
+// =========================
+// 1. Global
+// =========================
+
+
+// 1. Global
+// =========================
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #FFFAFA;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  overflow: hidden;
+  position: relative;
+  @include transition(background-color 0.4s $smooth);
+
+  &.dark {
+    background-color: #000;
+    color: $lightred;
+  }
+
+  @include breakpoint(991px) {
+    position: relative;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+::-moz-selection {
+  background: #000;
+  color: #fff;
+  text-shadow: none;
+}
+
+::selection {
+  background: #000;
+  color: #fff;
+  text-shadow: none;
+}
+
+.container {
+  padding: 0 1rem;
+  max-width: 100%;
+  width: 100%;
+
+  @media screen and (min-width: 992px) {
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      width: calc(100% + 2rem);
+      margin-left: -1rem;
+
+      .col {
+        width: 8.333%;
+        padding: 0 1rem;
+
+        &-2 {
+          width: 16.666%;
+        }
+
+        &-3 {
+          width: 25%;
+        }
+
+        &-4 {
+          width: 33.333%;
+        }
+
+        &-7 {
+          width: 58.3333333333%;
+        }
+
+        &-9 {
+          width: 75%;
+        }
+
+        &.offset-1 {
+          margin-left: 8.333%;
+        }
+
+        &.offset-2 {
+          margin-left: 16.666%;
+        }
+
+        &.offset-3 {
+          margin-left: 25%;
+        }
+
+        &.offset-7 {
+          margin-left: 58.3333333333%;
+        }
+
+        &.offset-8 {
+          margin-left: 66.666666667%;
+        }
+      }
+    }
+  }
+}

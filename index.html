@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+        <title>Thirtysixstudio</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link href="vendor/nice-select2.css" rel="stylesheet">
+        <link href="dist/index.css" rel="stylesheet">
+        
+        <script defer src="vendor/nice-select2.js"></script>
+        <script defer src="dist/index.js"></script>
+    </head>
+    <body>
+
+
+
+
+      <audio src="audio/world1.mp3" id="design1" preload loop></audio>
+      <audio src="audio/world2.mp3" id="design2" preload loop></audio>
+      
+
+      <span class="spice-anim"></span>
+      
+      <header class="header">
+        <div class="container">
+          <div class="row">
+            <div class="col col-3">
+              <a href="/" class="header__logo">Thirtysixstudio</a>
+            </div>
+            <div class="col col-4">
+              <button type="button" class="header__toggle">
+                <div class="header__toggle__light">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.54651 0.546321C8.54651 0.244596 8.30191 0 8.00018 0C7.69845 0 7.45385 0.244596 7.45385 0.546321V1.6559C7.45385 1.95763 7.69845 2.20222 8.00018 2.20222C8.30191 2.20222 8.54651 1.95763 8.54651 1.6559V0.546321Z" fill="#FFFAFA"/>
+                    <path d="M2.34325 12.8843C2.12989 13.0977 2.12989 13.4436 2.34325 13.6569C2.55661 13.8703 2.90252 13.8703 3.11588 13.6569L3.90049 12.8723C4.11384 12.659 4.11384 12.3131 3.90049 12.0997C3.68713 11.8864 3.34121 11.8864 3.12786 12.0997L2.34325 12.8843Z" fill="#FFFAFA"/>
+                    <path d="M8.00018 13.7978C8.30191 13.7978 8.54651 14.0424 8.54651 14.3441V15.4537C8.54651 15.7554 8.30191 16 8.00018 16C7.69845 16 7.45385 15.7554 7.45385 15.4537V14.3441C7.45385 14.0424 7.69845 13.7978 8.00018 13.7978Z" fill="#FFFAFA"/>
+                    <path d="M12.0996 3.12778C11.8863 3.34113 11.8863 3.68704 12.0996 3.90039C12.313 4.11375 12.6589 4.11375 12.8723 3.90039L13.6569 3.1158C13.8702 2.90245 13.8702 2.55654 13.6569 2.34319C13.4435 2.12984 13.0976 2.12983 12.8843 2.34319L12.0996 3.12778Z" fill="#FFFAFA"/>
+                    <path d="M13.7977 8C13.7977 7.69828 14.0423 7.45368 14.3441 7.45368H15.4537C15.7554 7.45368 16 7.69828 16 8C16 8.30173 15.7554 8.54632 15.4537 8.54632H14.3441C14.0423 8.54632 13.7977 8.30173 13.7977 8Z" fill="#FFFAFA"/>
+                    <path d="M12.8723 12.0997C12.6589 11.8863 12.313 11.8863 12.0996 12.0997C11.8863 12.313 11.8863 12.6589 12.0996 12.8723L12.8843 13.6569C13.0976 13.8702 13.4435 13.8702 13.6569 13.6569C13.8702 13.4435 13.8702 13.0976 13.6569 12.8843L12.8723 12.0997Z" fill="#FFFAFA"/>
+                    <path d="M0 8C0 7.69828 0.244601 7.45368 0.546332 7.45368H1.65594C1.95767 7.45368 2.20227 7.69828 2.20227 8C2.20227 8.30172 1.95767 8.54632 1.65594 8.54632H0.546332C0.244601 8.54632 0 8.30172 0 8Z" fill="#FFFAFA"/>
+                    <path d="M3.11582 2.34314C2.90247 2.12979 2.55655 2.12979 2.34319 2.34314C2.12984 2.55649 2.12984 2.90241 2.34319 3.11576L3.1278 3.90035C3.34116 4.1137 3.68707 4.1137 3.90043 3.90035C4.11379 3.687 4.11379 3.34109 3.90043 3.12774L3.11582 2.34314Z" fill="#FFFAFA"/>
+                    <path d="M4.90954 4.90944C6.61639 3.20263 9.38374 3.20263 11.0906 4.90944C12.7974 6.61625 12.7974 9.38355 11.0906 11.0904C9.38374 12.7972 6.61639 12.7972 4.90954 11.0904C3.2027 9.38355 3.2027 6.61625 4.90954 4.90944Z" fill="#FFFAFA"/>
+                  </svg>
+                </div>
+                <div class="header__toggle__dark">
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.25233 0.295266C4.28498 0.216599 4.26732 0.125621 4.20791 0.0646159C4.14905 0.00360938 4.05861 -0.0161909 3.97887 0.0137774C1.64933 0.897304 0 3.1535 0 5.79235C0 9.21839 2.78177 12 6.2077 12C8.84603 12 11.1023 10.3507 11.9863 8.02117C12.0163 7.94143 11.996 7.85099 11.9355 7.79212C11.8745 7.73272 11.7835 7.71506 11.7048 7.7477C11.0659 8.011 10.3654 8.14693 9.63327 8.14693C6.44325 8.14693 3.85355 5.5574 3.85355 2.36726C3.85355 1.63517 3.98948 0.934675 4.25278 0.295716L4.25233 0.295266Z" fill="black"/>
+                  </svg>
+                </div>
+              </button>
+            </div>
+            <div class="col col-4">
+              <nav>
+                <ul class="header__menu">
+                  <li class="header__menu__item">
+                    <a href="#what-we-do" class="header__menu__item__link">What we do</a>
+                  </li>
+                  <li class="header__menu__item">
+                    <a href="#who-we-are" class="header__menu__item__link">Who we are</a>
+                  </li>
+                  <li class="header__menu__item">
+                    <a href="#how-we-give-back" class="header__menu__item__link">How we give back</a>
+                  </li>
+                  <li class="header__menu__item">
+                    <a href="#talk-to-us" class="header__menu__item__link">Talk to us</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="col">
+              <button type="button" class="header__burger">Menu</button>
+              <button type="button" class="header__sound">
+                <svg class="on" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle opacity="0.1" cx="15" cy="15" r="14.5" stroke="black"/>
+                  <path d="M11.9091 9V21M9 13.3636V16.6364M15 11.9091V18.0909M18.0909 10.4545V19.5455M21 13.3636V16.6364" stroke="black" stroke-linecap="round"/>
+                </svg>
+                <svg class="off" width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle opacity="0.1" cx="15" cy="15" r="14.5" stroke="black"/>
+                  <path d="M11.9091 14V15M9 14V15M15 14V15M18.0909 14.0002V15M21 14V15" stroke="black" stroke-linecap="round"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="menu-mobile">
+        <button type="button" class="menu-close">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle opacity="0.1" cx="15" cy="15" r="14.5" stroke="black"/>
+            <path d="M9 9L21 21M21 9L9 21" stroke="black" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <ul class="nav">
+          <li class="nav__item">
+            <a href="#what-we-do" class="nav__item__link">What we do</a>
+          </li>
+          <li class="nav__item">
+            <a href="#who-we-are" class="nav__item__link">Who we are</a>
+          </li>
+          <li class="nav__item">
+            <a href="#how-we-give-back" class="nav__item__link">How we give back</a>
+          </li>
+          <li class="nav__item">
+            <a href="#talk-to-us" class="nav__item__link">Talk to us</a>
+          </li>
+        </ul>
+      </div>
+
+      <main class="home">
+        <div class="home-full">
+          <div class="home__head">
+
+            <div id="pepper1" class="parallax pepperC small" data-speed="-1"></div>
+            <div id="pepper2" class="parallax pepperC reverse small" data-speed="-3"></div>
+            <!-- <div id="pepper3" class="parallax pepperD medium-small" data-speed="-8"></div> -->
+            <div id="pepper4" class="parallax pepperB big" data-speed="-5"></div>
+
+            <!-- <div id="pepper60" class="parallax pepperA medium" data-speed="-4"></div> -->
+            <div id="pepper61" class="parallax pepperE big" data-speed="-5"></div>
+            <div id="pepper62" class="parallax pepperB reverse medium" data-speed="-7"></div>
+            <div id="pepper63" class="parallax pepperF bigger" data-speed="-10"></div>
+            <div id="pepper64" class="parallax pepperG medium-small" data-speed="-3"></div>
+            <!-- <div id="pepper65" class="parallax pepperA reverse medium" data-speed="-6"></div> -->
+            <div id="pepper66" class="parallax pepperF reverse small" data-speed="-2"></div>
+            
+
+
+            <div class="container">
+              <div class="row">
+                <div class="col col-3 offset-3 home__head__content">
+                  <div class="mobile-sound"><span></span> TAP FOR SOUND</div>
+                  <h2 class="subtitle">At Thirtysixstudio, we build digital assets and immersive experiences for purposeful brands.</h2>
+                  <p class="paragraph">We're a boutique production studio focused on design, animation, and technology, constantly rethinking what digital craft can do for present-day ads and campaigns.</p>
+                  <p>Scroll</p>
+                </div>
+                <div class="col col-3 offset-1">
+                  <div class="circular-text">
+                    <p class="text">THIRTYSIXSTUDIO — FOR ALL THINGS DIGITAL PRODUCTION —</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <div class="home__head__bottom">
+            <div class="home__title pepper-link spice">
+              <div class="peppermobile"><span class="spinner"></span></div>
+              <div class="container border-bottom">
+                <div class="home__title__content" data-splitting>
+                  <h1>Thirtysixstudio</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="home__about" id="what-we-do">
+      
+          <div id="pepper5" class="parallax pepperA medium" data-speed="-5"></div>
+          <div id="pepper6" class="parallax pepperD small" data-speed="-3"></div>
+          <div id="pepper7" class="parallax pepperC medium" data-speed="-5"></div>
+          <div id="pepper8" class="parallax pepperF bigger" data-speed="-12"></div>
+          <div id="pepper9" class="parallax pepperE big" data-speed="-10"></div>
+          <div id="pepper10" class="parallax pepperB small" data-speed="-1"></div>
+
+          <div class="container border-bottom">
+            <div class="row">
+              <div class="col col-2 offset-3">
+                <h2 class="title-section">
+                  <span class="nb">01</span>
+                  <span class="dash"></span>
+                  <span class="text">WHAT WE DO</span>
+                </h2>
+              </div>
+              <div class="col col-3 offset-2">
+                <h2 class="subtitle animate">We aim to elevate digital production in the advertising space, bringing your ideas to life.</h2>
+                <p class="paragraph animate">As a contemporary studio, we use cutting-edge design practices and the latest technologies to deliver current digital work.</p>
+                <p class="paragraph animate">Our commitment to innovation and simplicity, paired with our agile approach, ensures your journey with us is smooth and enjoyable from start to finish.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="home__services">
+
+
+          <div id="pepper11" class="parallax pepperB big" data-speed="-10"></div>
+          <div id="pepper12" class="parallax pepperF medium" data-speed="-1"></div>
+          <div id="pepper13" class="parallax pepperE medium" data-speed="-5"></div>
+          <div id="pepper14" class="parallax pepperD small" data-speed="-3"></div>
+          <div id="pepper15" class="parallax pepperC bigger" data-speed="-12"></div>
+          <div id="pepper16" class="parallax pepperC reverse medium" data-speed="-8"></div>
+          <div id="pepper17" class="parallax pepperG medium" data-speed="-3"></div>
+          <div id="pepper18" class="parallax pepperB medium-small" data-speed="-1"></div>
+
+
+          <div class="home__services__intro">
+            <div class="container border-bottom">
+              <div class="row">
+                <div class="col col-7 offset-3">
+                  <h3 class="small-title">OUR SERVICES</h3>
+                  <h2 class="subtitle" data-splitting data-slice>We provide you with captivating design, interactive animations, reliable code, and immaculate project coordination. Whether you need a campaign built from scratch or assistance at a specific phase, we’ve got you covered.</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="home__services__content">
+            <div class="container">
+              <div class="service">
+                <div class="service__title">
+                  <div class="row">
+                    <div class="col col-2 offset-3">
+                      <h3 class="small-title">CREATIVE</h3>
+                    </div>
+                    <div class="col col-1 offset-2">
+                      <div class="button-container">
+                        <button type="button" class="service__more"></button>
+                        <button type="button" class="service__less"></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="service__content">
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Art direction</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Creative direction</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="service">
+                <div class="service__title">
+                  <div class="row">
+                    <div class="col col-2 offset-3">
+                      <h3 class="small-title">DESIGN</h3>
+                    </div>
+                    <div class="col col-1 offset-2">
+                      <div class="button-container">
+                        <button type="button" class="service__more"></button>
+                        <button type="button" class="service__less"></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="service__content">
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Digital Design</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>UX/UI Design</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Web Design</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Graphic Design</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>3D Design</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Interactive Design</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Illustration Design</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Brand Design</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="service">
+                <div class="service__title">
+                  <div class="row">
+                    <div class="col col-2 offset-3">
+                      <h3 class="small-title">ANIMATION</h3>
+                    </div>
+                    <div class="col col-1 offset-2">
+                      <div class="button-container">
+                        <button type="button" class="service__more"></button>
+                        <button type="button" class="service__less"></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="service__content">
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>2D Animation</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>3D Animation</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Motion Graphics</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Experimental Animation</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Typography Animation</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="service">
+                <div class="service__title">
+                  <div class="row">
+                    <div class="col col-2 offset-3">
+                      <h3 class="small-title">TECHNOLOGY</h3>
+                    </div>
+                    <div class="col col-1 offset-2">
+                      <div class="button-container">
+                        <button type="button" class="service__more"></button>
+                        <button type="button" class="service__less"></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="service__content">
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Development</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Implementation</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Creative Coding</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Prototyping</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Quality Assurance</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Testing</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="service">
+                <div class="service__title">
+                  <div class="row">
+                    <div class="col col-2 offset-3">
+                      <h3 class="small-title">PROJECT DELIVERY</h3>
+                    </div>
+                    <div class="col col-1 offset-2">
+                      <div class="button-container">
+                        <button type="button" class="service__more"></button>
+                        <button type="button" class="service__less"></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="service__content">
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Production Strategy</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Project Management</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Team Direction</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="service">
+                <div class="service__title">
+                  <div class="row">
+                    <div class="col col-2 offset-3">
+                      <h3 class="small-title">EXAMPLE PRODUCTS</h3>
+                    </div>
+                    <div class="col col-1 offset-2">
+                      <div class="button-container">
+                        <button type="button" class="service__more"></button>
+                        <button type="button" class="service__less"></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="service__content">
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Social Ads</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Websites</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>AR Filters and Experiences</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Display Ads (Html5, Static, Rich media)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Digital Out of Home</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Static and Animated Assets</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Digital Installations</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="service__content__row">
+                    <div class="row">
+                      <div class="col col-9 offset-3">
+                        <p>Design Toolkits</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="home__services__contact">
+
+
+          <div id="pepper19" class="parallax pepperE bigger" data-speed="-10"></div>
+          <div id="pepper20" class="parallax pepperF medium-small" data-speed="-3"></div>
+          <div id="pepper21" class="parallax pepperB bigger" data-speed="-12"></div>
+          <div id="pepper22" class="parallax reverse pepperG big" data-speed="-8"></div>
+          <div id="pepper23" class="parallax pepperC medium" data-speed="-6"></div>
+
+
+
+            <div class="container border-bottom">
+              <div class="row">
+                <div class="col col-3 offset-3">
+                  <p class="paragraph animate">Got a project in mind? Drop us a line at<br /><a href="mailto:hello@thirtysixstudio.com">hello@thirtysixstudio.com</a> or use the form below.</p>
+                  <p class="paragraph animate">Not sure what you need? We’re here to help you define the undefined. Let’s explore all creative and technical possibilities together through one of our tailored labs, where we champion future-forward thinking within an ethical framework.</p>
+                  <div class="animate-btn">
+                    <a href="#talk-to-us" class="btn small anchor">
+                      <span class="btn__text">TALK TO US</span>
+                      <span class="btn__anim"></span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="home__vision" id="who-we-are">
+
+          <div id="pepper24" class="parallax pepperF bigger" data-speed="-10"></div>
+          <div id="pepper25" class="parallax pepperA bigger" data-speed="-12"></div>
+          <div id="pepper26" class="parallax pepperD medium-small" data-speed="-2"></div>
+          <div id="pepper27" class="parallax pepperA reverse medium" data-speed="-4"></div>
+
+          <div class="container border-bottom">
+            <div class="row">
+              <div class="col col-2 offset-3">
+                <h2 class="title-section">
+                  <span class="nb">02</span>
+                  <span class="dash"></span>
+                  <span class="text">WHO WE ARE</span>
+                </h2>
+              </div>
+              <div class="col col-3 offset-2">
+                <h2 class="subtitle animate">Our vision is to refine digital production while creating social impact and opportunity.</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="home__presentation">
+
+
+          <div id="pepper28" class="parallax pepperD bigger" data-speed="-12"></div>
+          <div id="pepper29" class="parallax pepperG big" data-speed="-8"></div>
+
+
+          <div class="container">
+            <div class="home__presentation__item">
+              <div class="row">
+                <div class="col col-7">
+                  <h2 class="title" data-splitting data-effect>Agile</h2>
+                </div>
+                <div class="col col-3">
+                  <p class="paragraph animate">We live and breathe efficiency and are not limited by geography. Local to Amsterdam with hubs in London, Paris, Johannesburg, New York, and beyond, we curate the right team for each project and get moving swiftly.</p>
+                </div>
+              </div>
+            </div>
+            <div class="home__presentation__item">
+              <div class="row">
+                <div class="col col-7">
+                  <h2 class="title" data-splitting data-effect>Innovative</h2>
+                </div>
+                <div class="col col-3">
+                  <p class="paragraph animate">We use carefully crafted digital processes and new technology to ensure our initiatives run smoothly, allowing our lean and international team to focus on what matters and maximize momentum and opportunity.</p>
+                </div>
+              </div>
+            </div>
+            <div class="home__presentation__item">
+              <div class="row">
+                <div class="col col-7">
+                  <h2 class="title" data-splitting data-effect>Cultured</h2>
+                </div>
+                <div class="col col-3">
+                  <p class="paragraph animate">We are progressive and community-focused and don’t believe in maintaining the status quo or sticking to outdated ways. Our people reflect today’s realities and stay connected to culture.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="home__founder">
+
+          <div id="pepper30" class="parallax pepperA medium" data-speed="-4"></div>
+          <div id="pepper31" class="parallax pepperE big" data-speed="-8"></div>
+          <div id="pepper32" class="parallax pepperB bigger" data-speed="-10"></div>
+          <div id="pepper33" class="parallax pepperF medium-small" data-speed="-4"></div>
+          <div id="pepper34" class="parallax pepperD medium" data-speed="-6"></div>
+
+
+          <div class="container border-bottom">
+            <div class="row">
+              <div class="col col-3 offset-7">
+                <h2 class="subtitle animate">Our studio represents today's modern world: progressive, inclusive, and socially engaged.</h2>
+                <p class="paragraph animate">Thirtysixstudio was founded by Gita Jagessar, a queer person of color and seasoned production director from Amsterdam. With over 13 years of experience in digital advertising, Gita has worked with renowned global brands such as Netflix, Converse, Travis Scott, Ben & Jerry’s, Adidas, Cash App, and many more.</p>
+                <div class="animate-btn">
+                  <a href="https://www.gitajagessar.com/" class="btn small" target="_blank">
+                    <span class="btn__text">LEARN MORE</span>
+                    <span class="btn__anim"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="home__give" id="how-we-give-back">
+
+          <div id="pepper35" class="parallax pepperC big" data-speed="-6"></div>
+          <div id="pepper36" class="parallax pepperE medium-small" data-speed="-3"></div>
+          <div id="pepper37" class="parallax pepperA bigger" data-speed="-12"></div>
+          <div id="pepper38" class="parallax pepperB big" data-speed="-6"></div>
+          <div id="pepper39" class="parallax pepperG medium-small" data-speed="-2"></div>
+
+
+
+          <div class="container border-bottom">
+            <div class="row">
+              <div class="col col-7 offset-3">
+                <h2 class="title-section">
+                  <span class="nb">03</span>
+                  <span class="dash"></span>
+                  <span class="text">HOW WE GIVE BACK</span>
+                </h2>
+                <h2 class="subtitle" data-splitting data-slice>At Thirtysixstudio, we recognize that our industry can perpetuate harm. We believe we have to try and reverse some of these imbalances. That’s why we’re launching SS36, our local social sustainability hub.</h2>
+                <h2 class="subtitle" data-splitting data-slice>Through SS36, we reinvest some of our revenue and expertise into the communities that shape the culture and trends our field so heavily relies on. Our main focus is on bridging gaps for those affected by systemic obstacles related to race, sexuality, wealth and gender identity.</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="home__impact">
+
+
+          <div id="pepper40" class="parallax pepperF bigger" data-speed="-10"></div>
+
+
+          <div class="container border-bottom">
+            <div class="row">
+              <div class="col col-3 offset-3">
+                <p class="paragraph animate">Our SS36 work includes community-centric projects for local marginalized groups, as well as career initiatives for marginalized industry talent.</p>
+                <p class="paragraph animate">As a client, the most impactful way you can assist us in reaching our social sustainability goals is by collaborating with our team on a project. We warmly welcome partner- and sponsorships from like-minded individuals and organizations.</p>
+                <div class="animate-btn">
+                  <a href="#contact-form" class="btn small anchor">
+                    <span class="btn__text">GET IN TOUCH</span>
+                    <span class="btn__anim"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="home__talk" id="talk-to-us">
+
+
+          <div id="pepper41" class="parallax pepperB bigger" data-speed="-12"></div>
+          <div id="pepper42" class="parallax pepperA big" data-speed="-8"></div>
+          <div id="pepper43" class="parallax pepperE medium-small" data-speed="-2"></div>
+          <div id="pepper44" class="parallax pepperC medium" data-speed="-5"></div>
+          <div id="pepper45" class="parallax pepperB reverse medium-small" data-speed="-3"></div>
+
+
+          <div class="container border-bottom">
+            <div class="row">
+              <div class="col col-4 offset-3">
+                <h2 class="title-section">
+                  <span class="nb">04</span>
+                  <span class="dash"></span>
+                  <span class="text">TALK TO US</span>
+                </h2>
+              </div>
+              <div class="col col-3">
+                <h3 class="small-title animate">TALENT</h3>
+                <h2 class="subtitle animate">Thirtysixstudio is seeking talented collaborators.</h2>
+                <p class="paragraph animate">If you are a multi-talented individual with exceptional communication skills, eager to elevate your digital craft together with us, we want to hear from you.</p>
+                <p class="paragraph animate">We specifically welcome progressive people who value high-quality work and workplace well-being equally. At Thirtysixstudio, we believe that one can only exist in the presence of the other.</p>
+                <div class="animate-btn">
+                  <a href="#contact-form" class="btn small anchor">
+                    <span class="btn__text">DROP US A LINE</span>
+                    <span class="btn__anim"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="home__roles">
+
+
+          <div id="pepper46" class="parallax pepperD bigger" data-speed="-10"></div>
+          <div id="pepper47" class="parallax pepperE medium" data-speed="-2"></div>
+          <div id="pepper48" class="parallax pepperG big" data-speed="-6"></div>
+          <div id="pepper49" class="parallax pepperF big" data-speed="-8"></div>
+          <div id="pepper50" class="parallax pepperB big" data-speed="-5"></div>
+
+          <div class="container border-bottom">
+            <div class="service active">
+              <div class="service__title">
+                <div class="row">
+                  <div class="col col-2 offset-3">
+                    <h3 class="small-title">ROLES OPEN</h3>
+                  </div>
+                  <div class="col col-1 offset-2">
+                    <div class="button-container">
+                      <button type="button" class="service__more"></button>
+                      <button type="button" class="service__less"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="service__content">
+                <div class="service__content__row">
+                  <div class="row">
+                    <div class="col col-9 offset-3">
+                      <p>Project Managers</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="service__content__row">
+                  <div class="row">
+                    <div class="col col-9 offset-3">
+                      <p>Digital Producers</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="service__content__row">
+                  <div class="row">
+                    <div class="col col-9 offset-3">
+                      <p>Designers</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="service__content__row">
+                  <div class="row">
+                    <div class="col col-9 offset-3">
+                      <p>Illustrators</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="service__content__row">
+                  <div class="row">
+                    <div class="col col-9 offset-3">
+                      <p>Animators</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="service__content__row">
+                  <div class="row">
+                    <div class="col col-9 offset-3">
+                      <p>3D Artists</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="service__content__row">
+                  <div class="row">
+                    <div class="col col-9 offset-3">
+                      <p>Motion Designers</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="service__content__row">
+                  <div class="row">
+                    <div class="col col-9 offset-3">
+                      <p>Developers and Coders</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="service__content__row">
+                  <div class="row">
+                    <div class="col col-9 offset-3">
+                      <p>Creative Technologists</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="service__content__row">
+                  <div class="row">
+                    <div class="col col-9 offset-3">
+                      <p>Sound Engineers</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="home__clients">
+
+
+          <div id="pepper51" class="parallax pepperA bigger" data-speed="-12"></div>
+
+          <div class="container border-bottom">
+            <div class="row">
+              <div class="col col-3 offset-3">
+                <h3 class="small-title animate">CLIENTS</h3>
+                <h2 class="subtitle animate">Ready to get your project off the ground?</h2>
+                <p class="paragraph animate">We’re currently accepting new clients and are excited to hear from you. Get in touch by sending an email to <a href="mailto:hello@thirtysixstudio.com">hello@thirtysixstudio.com</a> or fill out the form below to start your journey with us.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="contact-form" class="home__contact">
+
+
+          <div id="pepper52" class="parallax pepperE big" data-speed="-9"></div>
+          <div id="pepper53" class="parallax pepperG medium" data-speed="-4"></div>
+          <div id="pepper54" class="parallax pepperF bigger" data-speed="-12"></div>
+          <div id="pepper55" class="parallax pepperB big" data-speed="-10"></div>
+          <div id="pepper56" class="parallax pepperE reverse medium-small" data-speed="-2"></div>
+
+
+          <div class="container border-bottom">
+            <div class="row">
+              <div class="col col-7 offset-3">
+                <form class="home__contact__form">
+                  <div class="home__contact__form__field">
+                    <input type="text" placeholder="Name*" name="name" />
+                  </div>
+                  <div class="home__contact__form__field">
+                    <input type="email" placeholder="Email*" name="email" />
+                  </div>
+                  <div class="home__contact__form__field">
+                    <select class="wide" name="object">
+                      <option value="Talk about a project">Talk about a project</option>
+                      <option value="Become part of the team">Become part of the team</option>
+                      <option value="Something else">Something else</option>
+                    </select>
+                  </div>
+                  <span class="error-message">*Incorrect email</span>
+                  <div class="home__contact__form__field">
+                    <textarea name="message" placeholder="Message"></textarea>
+                  </div>
+                  <a href="#" class="btn small home__contact__form__submit disabled">
+                    <span class="btn__text">SEND</span>
+                    <span class="btn__anim"></span>
+                    <span class="btn__sending">SENDING</span>
+                    <span class="btn__sent">MESSAGE SENT!</span>
+                  </a>
+                </form>
+                <div class="success">
+                  <p class="paragraph">Thank you for your message. We will get back to you shortly.</p>
+                </div>
+              </div>
+            </div>  
+          </div>
+        </div>
+
+        <div class="home__pepper">
+          <div class="container">
+            <div class="row">
+              <div class="col col-3 offset-3">
+                <div>
+                  <h2 class="subtitle animate">Pssst. Looking for something spicy?</h2>
+                  <p class="paragraph animate">Find the floating adjuma pepper or click the big red button below to unlock our fiery alter ego. Be warned, it’s hot in there! Don’t forget to turn on your sound.</p>
+                  <a href="#" class="btn spice">
+                    <span class="btn__text">BRING THE HEAT!</span>
+                    <span class="btn__anim"></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </main>
+
+      <footer class="footer">
+
+
+        <div id="pepper57" class="parallax pepperD bigger" data-speed="-12"></div>
+        <div id="pepper58" class="parallax pepperG medium" data-speed="-8"></div>
+        <div id="pepper59" class="parallax pepperC big" data-speed="-11"></div>
+
+
+        <div class="container">
+          <div class="row">
+            <div class="col col-2 offset-3">
+              <ul class="footer__social">
+                <li class="footer__social__item">
+                  <a href="https://www.linkedin.com/company/thirtysixstudio" class="footer__social__item__link" target="_blank">Linkedin</a>
+                </li>
+                <li class="footer__social__item">
+                  <a href="https://www.instagram.com/thirtysixstudio.ams" class="footer__social__item__link" target="_blank">Instagram</a>
+                </li>
+              </ul>
+              <div class="footer__copyright">
+                <p class="paragraph">All Rights Reserved<br />©2025, Thirtysixstudio </p>
+              </div>
+              <p class="registration">Thirtysixstudio is registered with the Dutch Chamber of Commerce under registration number KVK 90310152.</p>
+            </div>
+            <div class="col col-3 offset-1">
+              <div class="footer__info">
+                <p class="paragraph"><a href="mailto:hello@thirtysixstudio.com">hello@thirtysixstudio.com</a>Amsterdam and worldwide</p>
+              </div>
+              <div class="footer__links">
+                <a href="privacy-statement-thirtysixstudio.pdf" target="_blank" class="btn small privacy">
+                  <span class="btn__text">
+                    <span>PRIVACY STATEMENT</span>
+                    <svg class="arrow" width="7" height="8" viewBox="0 0 7 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M3.5 8L0 4.90395V4.0339L3.15909 6.76836V0H3.84091V6.75706L7 4.0339V4.90395L3.5 8Z" fill="black"/>
+                    </svg>
+                  </span>
+                  <span class="btn__anim"></span>
+                </a>
+                <a href="#" class="btn small to-top">
+                  <span class="btn__text">Back to top</span>
+                  <span class="btn__anim"></span>
+                </a>
+              </div>
+              <div class="footer__copyright__mobile">
+                <p class="paragraph">All Rights Reserved<br />©2025, Thirtysixstudio</p>
+              </div>
+              <h2 class="subtitle">Thirtysixstudio</h2>
+              <p class="registration-mobile">Thirtysixstudio is registered with the Dutch Chamber of Commerce under registration number KVK 90310152.</p>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+      <div class="cursor">
+        <span>CLICK FOR SOUND</span>
+        <div class="load">LOADING</div>
+        <div class="spinner"></div>
+      </div>
+
+
+      <div id="rotate">
+        <div class="head">
+          <div class="container">
+            <div class="wrapper">
+              <p>Thirtysixstudio</p>
+            </div>
+          </div>
+        </div>
+        <div class="title-container container">
+          <h2>Please rotate your device.<br />Thank you.</h2>
+        </div>
+      </div>
+
+
+    </body>
+</html>
